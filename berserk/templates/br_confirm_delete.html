@@ -1,0 +1,11 @@
+{% block title %}Delete that record{% endblock %}
+
+{% block content %}
+<p>{{br.title}}</p>
+<p>{{br.content}}</p>
+<p>{{br.published}}</p>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+{% endblock %}

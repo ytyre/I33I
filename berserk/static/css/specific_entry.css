@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+body {
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #3D348B;
+    height: auto;
+    overflow-y: scroll;
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.navbar {
+    position: relative;
+    background-color: #191716;
+    overflow: hidden;
+    height: 90px;
+}
+
+.navbar a {
+    height: 90px;
+    margin-left: 0px;
+    width: 200px;
+    font-family: 'Space Mono', monospace;
+    float: left;
+    text-align: center;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 25px 20px; /* Вертикальный паддинг для выравнивания текста по центру */
+    text-decoration: none;
+    font-size: 25px;
+    transition: background-color 0.37s ease;
+    position: relative; /* Позиционируем для добавления разделительных граней */
+    margin-right: 0px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 0px; /* Расстояние между ссылками */
+    height: 100%; /* Устанавливаем высоту псевдоэлемента на 100% высоты ссылки */
+}
+
+
+.navbar a:nth-child(3)::after {
+    display: none; /* Скрыть грань после последнего элемента навигации */
+}
+
+.navbar a:hover {
+    background-color: #494847;
+}
+
+/* Стилизация полосы прокрутки */
+/* Изменение высоты полосы скролла */
+::-webkit-scrollbar {
+    width: 12px;
+    min-height: 10px;
+}
+
+/* Стилизация "бегунка" (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: #191716; /* Цвет бегунка */
+}
+
+/* Стилизация трека (track) */
+::-webkit-scrollbar-track {
+    background-color: #3D348B; /* Цвет трека */
+    border-radius: 0px; /* Закругленные углы трека */
+}
+
+/* Стилизация угловых кнопок (переключателей) */
+::-webkit-scrollbar-corner {
+    background-color: #E0E2DB; /* Цвет угловых кнопок */
+}
+
+
+.container1 {
+    display: flex;
+    float: right;
+    margin-top: 20px;
+}
+
+.dropbtn1{
+    background-color:#191716 ;
+    border: none;
+    margin-right: 25px;
+    
+}
+
+.dropbtn1 span{
+    color: white;
+    font-size: 45px;
+}
+
+
+.dropdown1 button {
+    font-size: 17px;
+    font-family: 'Space Mono', monospace;
+    background-color: #191716;
+    border-radius: 30px;
+    height: 50px;
+    width: 200px;
+    color: white;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+.dropdown-content1 {
+    border: 1px solid #BEB7A4;
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    
+    z-index: 1;
+    border-radius: 30px;
+    margin-top: 10px;
+    right: 2%;
+
+}
+
+
+.dropdown-content1 a {
+    height: 75px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+}
+
+
+.dropdown-content1 a:hover {
+    background-color: #ddd;
+    border-radius: 30px;
+}
+
+
+.show {display:block;}
+
+.dropdown-content1 a span.material-symbols-outlined {
+    vertical-align: middle; /* Центрирование по вертикали */
+    display: inline-block; /* Сделать элемент инлайн-блочным для корректного выравнивания */
+    margin-right: 5px; /* Добавить немного отступа справа от иконки */ 
+    margin-top: -2px;
+    
+    
+}
+
+
+.dropdown-content1 a {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрирование по горизонтали */
+    padding: 5px;
+    text-decoration: none; /* Убедитесь, что у ссылок нет подчеркивания */
+    height: 50px;
+}
+
+
+.footer {
+    margin-top: 135px;
+    background-color: #191716;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    opacity: 0.80;
+    font-size: 18px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+.main{
+    height: auto;
+    overflow: hidden;
+    display: flex;
+}
+
+.img {
+    border-radius: 50%;
+    width: 225px;
+    height: 225px;
+    object-fit: cover;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.55);
+    border: 0.5px solid black;
+    display: block;
+    margin: 125px 0 0 45px;
+}
+
+.author {
+    font-size: 43px;
+    color: white; /* Измените цвет имени автора, например, на оранжевый */
+    margin-bottom: 10px; /* Уменьшите отступ снизу */
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    display: block;
+    margin: 20px 0 0 100px;
+    
+}
+.author a{
+    text-decoration: none;
+    color: white;   
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    display: block;
+}
+
+.title {
+    display: inline-block; /* Делаем блок inline, чтобы он имел ширину, достаточную для текста внутри */
+    font-size: 60px;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    padding: 5px 10px;
+    border-radius: 50px;
+    width: auto;
+    min-width: 300px;  
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+}
+.con_tit{
+    text-align: center;
+    margin: 15px 0 0 100px; 
+}
+
+.content {
+    font-family: 'Jost', sans-serif;
+    color: white;
+    font-size: 35px;
+    
+    display: block;
+    top: 40%;
+    left: 27%;
+    width: 800px;
+    height: auto;
+}
+
+.comment-count {
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    color: white;
+    display: block;
+    height: auto;
+    width: auto;
+    margin-top: 525px;
+    float: right;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    margin-right: -100px;
+}
+.all_rat{
+    float: right;
+    overflow: hidden;
+    width: 350px;
+}
+
+.rating{
+    float: right;
+    color: white;
+    font-size: 80px;
+    display: block;
+    margin-top: 150px;
+    height: 100px;
+    width: 75px;
+    margin-right: 75px;
+    margin-top: 225px;
+}
+
+.up{
+    background-color: #3D348B;
+    border: none;
+    color: white;
+    display: block;
+    float: right;
+    height: 100px;
+    margin-right: 165px;
+    margin-top: 45px;
+}
+.down{
+    background-color: #3D348B;
+    border: none;
+    color: white;
+    display: block;
+    margin-right: 15px;
+    float: right;
+    height: 100px;
+}
+
+
+.up .material-symbols-outlined {   
+    color: white !important; 
+    font-size: 175px;
+    cursor: pointer;
+    display: block;
+    width: 45px;
+    float: right;
+}
+.down .material-symbols-outlined {
+    color: white !important; 
+    font-size: 175px;
+    cursor: pointer;
+    display: block;
+    width: 45px;
+    margin-top: 325px;
+    float: right;
+}
+
+
+.up_form{  
+    display: block;
+    width: 0px;
+    height: 0px;
+    float: right;
+
+}
+.down_form{
+    display: block;
+    width: 0px;
+    height: 0px;
+    float: right;
+}
+.polosa{
+    width: 95%;
+    height: 3px;
+    background-color: white;
+    border-radius: 30px;
+    right:  50%;
+    transform: translateX(2%);
+    margin-top: 75px;
+}
+
+.com_h{
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+}
+
+.com_but{
+    font-family: 'Jost', sans-serif;
+    background-color: #191716;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    height: 55px;
+    width: 250px;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.create_comm{
+    text-decoration: none;
+    color: white;
+}
+.container{
+    display: flex;
+    justify-content: center; 
+}
+
+.comment_info{
+    display: flex;
+    justify-content: center; 
+    height: auto;
+}
+.l_inf{
+    overflow: hidden;
+}
+.com_img{
+    border-radius: 50%;
+    width: 225px;
+    height: 225px;
+    object-fit: cover;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.55);
+    border: 0.5px solid black;
+    display: block;
+    margin: 125px 0 0 45px;
+}
+.content1{
+    font-family: 'Jost', sans-serif;
+    color: white;
+    font-size: 35px;
+    display: block;
+    width: 600px;
+    height: auto;
+    text-align: center;
+    margin-top: 200px;
+}
+.date1{
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
+    color: white;
+    margin-top: 400px;
+}
+.polosa1{
+    width: 65%;
+    height: 3px;
+    background-color: white;
+    border-radius: 30px;
+    right:  50%;
+    transform: translateX(30%);
+    margin-top: 75px;
+}

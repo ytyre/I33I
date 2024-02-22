@@ -1,0 +1,37 @@
+{% load thumbnail %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/extrainformations.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    
+</head>
+<header class="navbar">
+    <a href="{% url 'ber' %}" class="i">I33I</a>
+</header>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="chk" aria-hidden="true">Extrainformation:</label>
+            <input type="text" name="e_inf" placeholder="About me" >  
+            <input type="date" name="age" placeholder="Age" >
+            <select name="gender" >
+                <option value="" disabled selected hidden>Select Gender</option>
+                <option value=True >Male</option>
+                <option value=False >Female</option>
+            </select>
+            <input type="file" name="image" placeholder="Select a file" required="" id="file-input" accept=
+            " image/*">
+            <button type="submit">Complete</button>
+        </form>
+        
+			
+	</div>
+</body>
+</html>

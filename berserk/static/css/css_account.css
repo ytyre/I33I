@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+
+body {
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E0E2DB;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color: #191716;
+    overflow: hidden;
+    height: 90px;
+    width: 100%;
+}
+
+.navbar a {
+    height: 90px;
+    margin-left: 0px;
+    width: 200px;
+    font-family: 'Space Mono', monospace;
+    float: left;
+    text-align: center;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 25px 20px; /* Вертикальный паддинг для выравнивания текста по центру */
+    text-decoration: none;
+    font-size: 25px;
+    transition: background-color 0.37s ease;
+    position: relative; /* Позиционируем для добавления разделительных граней */
+    margin-right: 0px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 0px; /* Расстояние между ссылками */
+    height: 100%; /* Устанавливаем высоту псевдоэлемента на 100% высоты ссылки */
+}
+
+
+.navbar a:nth-child(3)::after {
+    display: none; /* Скрыть грань после последнего элемента навигации */
+}
+
+.navbar a:hover {
+    background-color: #494847;
+}
+
+.log form {
+    margin-left: 25px;
+    padding: 0;
+}
+
+.log button {
+    margin-left: 25px;
+    font-family: 'Space Mono', monospace;
+    font-size: 25px;
+    float: right;
+    background-color: #191716;
+    color: white;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.37s ease;
+    height: 90px;
+    line-height: 65px; /* Плавный переход цвета фона при наведении */
+}
+
+.log button:hover {
+    background-color: #494847;
+}
+
+.btn{
+    font-family: 'Jost', sans-serif;
+}
+.button {
+    display: inline-block;
+    margin-top: 0px;
+    margin-left: -150px;
+    position: relative; /* Позиционируем контейнер .button относительно кнопки */
+    font-family: 'Jost', sans-serif;
+}
+
+.button form {
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    
+}
+
+.button button {
+    height: 48px;
+    font-family: 'Jost', sans-serif;
+    padding: 10px 20px;
+    background-color: #191716;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.37s ease;
+    margin-top: 10px;
+    z-index: 1; /* Поднимаем кнопку над тенью */
+    position: relative; /* Устанавливаем позицию относительно .button */
+}
+
+.button form{
+    font-family: 'Jost', sans-serif;
+}
+
+.button button:hover::before {
+    opacity: 1; /* Сделать тень видимой при наведении */
+}
+
+.button button:last-child {
+    margin-bottom: 10px;
+}
+
+.button button:hover {
+    background-color: #494847;
+}
+
+
+
+.img{
+    margin-top: 90px;
+    margin-left: 150px;
+    border-radius: 360px;
+    width: 245px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.45); 
+    
+}
+
+.user {
+    font-size: 20px;
+    margin-top: -240px;
+    margin-left: 365px;
+    padding: 10px 20px; /* Добавляем отступы внутри элемента */
+    margin-right: 15px;
+    
+}
+
+.Name{
+    margin-top: -200px;
+    margin-left: 120px;
+    font-size: 50px;
+}
+.about{
+    margin-top: 55px;
+    margin-left: 120px;
+    font-size: 25px;
+}
+.about2{
+    font-size: 20px;
+    margin-left: 120px;
+    border: 2px solid #3D348B;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 750px;
+}
+
+
+.all{
+    font-size: 20px;
+    margin-left: 120px;
+    border: 2px solid #3D348B;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 750px;
+}
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+.img {
+  margin-top: 90px;
+  margin-bottom: 20px; /* Добавлен отступ снизу изображения */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.45);
+}
+  
+  .button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание кнопок по левому краю */
+    margin-left: 150px;
+    margin-top: 25px;
+    }
+
+.additional_information{
+    margin-top: 55px;
+    margin-left: 120px;
+    font-size: 25px;
+}
+
+footer{
+    width: 100%;
+}
+.footer {
+    margin-top: 135px;
+    background-color: #191716;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    opacity: 1;
+    font-size: 18px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+
+
+/* Стилизация полосы прокрутки */
+::-webkit-scrollbar {
+    width: 12px;
+    border-radius: -120px;
+}
+
+/* Стилизация "бегунка" (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: #191716; /* Цвет бегунка */
+    border-radius: 0px; /* Закругленные углы бегунка */
+}
+
+/* Стилизация трека (track) */
+::-webkit-scrollbar-track {
+    background-color: #E0E2DB; /* Цвет трека */
+    border-radius: 0px; /* Закругленные углы трека */
+}
+
+/* Стилизация угловых кнопок (переключателей) */
+::-webkit-scrollbar-corner {
+    background-color: #E0E2DB; /* Цвет угловых кнопок */
+}
+
+
+
+.color1 {color: #6e0d1c;}
+.color2 {color: #191716;}
+.color3 {color: #b72a1c;}
+.color4 {color: #f54b1d;}
+.color5 {color: #ff8227;}

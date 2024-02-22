@@ -1,0 +1,107 @@
+{% load thumbnail %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css"
+        href="{% static 'css/user_informations.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    </head>
+    <body>
+    <header class="navbar">
+        <a href="{% url 'create_record' %}">Create record</a>
+        <a href="{% url 'ber' %}">Main</a>
+        <a href='{% url "MyNotes" %}'>My notes</a>
+        {% if request.user.is_authenticated %}
+        <div class="log"> 
+            <form action="{% url 'logout' %}">
+                <button>Logout</button>
+        </form>
+        </div>
+        {% endif %}
+    </header>
+    </body>
+    {% for d in acc %}
+    {% if d.image %}
+      <div class="user-container">
+        <img src="{{ d.image|thumbnail_url:'default' }}" class="img">
+        <div class="button">
+          <form action="{% url 'CreateExtraInformation' %}" >
+            <button>Add account information</button>
+          </form>
+          <form action="{% url 'PasswordChangeView' %}">
+            <button>Change password</button>
+          </form> 
+        </div>
+      </div>
+    {% else %}
+      {% for i in admin_image %}
+        <div class="user-container">
+          <img src="{{ i.image|thumbnail_url:'base'}}" class="img">
+          <div class="button">
+            <form action="{% url 'CreateExtraInformation' %}" >
+              <button>Add account information</button>
+            </form>
+            <form action="{% url 'PasswordChangeView' %}">
+              <button>Change password</button>
+            </form> 
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+      
+    <div class="user">
+        {% if request.user.is_authenticated %}
+        <h1 class="Name">{{ request.user.username }}</h1>
+        {% if user.is_authenticated and user.is_superuser %}
+        <a href="{% url 'DefaultImage' %}">Image</a>
+        {% endif %}
+    {% for d in acc %} 
+    <div>
+        
+        <h2 class="about">About the user: </h2>
+        <p class="about2">{{ d.e_inf|default:'---' }}</p>
+        <h4 class="additional_information">Additional information:</h4>
+        <div class="all">
+            <p>Email: {{ request.user.email }}</p>
+            <p>Age: {{ d.age|default:'---' }}</p>
+            {% if d.gender %}
+            <p>Gender: Male</p>
+            {% else %}
+            <p>Gender: Female</p>
+            {% endif %}    
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+  <!-- Другие данные о пользователе, если они доступны -->
+    {% else %}
+        <p>Пожалуйста, войдите в систему.</p>
+        <h4><a href="{% url 'login' %}"> login </a></h4>
+    {% endif %}
+    <div class="polosa"></div>
+    <h2 class="h">Records:</h2>
+    {% for p in post %}
+    <div class="main1">
+        <div class="clearfix">        
+            <h2 class="title1"><a href="{% url 'specific_entry' p.pk %}">{{ p.title }}</a></h2>
+            <div class="content1">{{ p.content }}</div>
+            <i class="material-icons-outlined">comment</i>
+            <div class="comment-count1">{{ p.comment_set.count|default:0 }}</div>
+            <div class="date1">{{ p.published|date:"d.m.Y H:i" }}</div>
+        </div>
+    </div>
+    {% endfor %}
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Contact us: <a href="mailto:feathui@mail.ru">feathui@mail.ru</a></p>
+                <p>Author: K.D.A.</p>
+            </div>
+        </div>
+    </footer>
+    
+</html>   

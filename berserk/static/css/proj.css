@@ -1,0 +1,75 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #191716, #3D348B, #E6AF2E, #494847);
+}
+
+.header {
+    position: relative;
+     /* Центрируем текст по горизонтали */
+    margin-top: 150px; /* Отступ сверху для .i */
+}
+
+.i {
+    font-family: 'Jost', sans-serif;
+    font-size: 120px;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* Добавляем тень для выделения текста */
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 15px 0 0 75px;
+    text-decoration: none;
+}
+
+
+
+
+
+.main{
+	width: 350px;
+	height: 500px;
+	background: red;
+	overflow: scroll;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+    overflow-x: hidden;
+    
+}
+#chk{
+	display: none;
+}
+
+
+.bin{
+    font-size: 45px;
+    text-align: center;
+    margin-left: 30px;
+}
+
+/* Общие стили для полосы прокрутки */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Стилизация "бегунка" (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(61, 52, 139, 0); /* Цвет бегунка с прозрачностью 0.5 */
+    border-radius: 0px; /* Закругленные углы бегунка */
+}
+/* Стилизация трека (track) */
+::-webkit-scrollbar-track {
+    background-color: none; /* Цвет трека */
+    border-radius: 30px;
+}
+
+/* Стилизация угловых кнопок (переключателей) */
+::-webkit-scrollbar-corner {
+    background-color: #191716; /* Цвет угловых кнопок */
+}

@@ -1,0 +1,10 @@
+sample
+account
+samplesearch
+create_view
+my_notes
+com_create
+login
+sing in 
+password_change
+password_change_done

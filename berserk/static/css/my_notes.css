@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+body {
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E0E2DB;
+    min-height: 100%;
+}
+
+.navbar {
+    position: relative;
+    background-color: #191716;
+    overflow: hidden;
+    height: 90px;
+}
+
+.navbar a {
+    height: 90px;
+    margin-left: 0px;
+    width: 200px;
+    font-family: 'Space Mono', monospace;
+    float: left;
+    text-align: center;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 25px 20px; /* Вертикальный паддинг для выравнивания текста по центру */
+    text-decoration: none;
+    font-size: 25px;
+    transition: background-color 0.37s ease;
+    position: relative; /* Позиционируем для добавления разделительных граней */
+    margin-right: 0px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 0px; /* Расстояние между ссылками */
+    height: 100%; /* Устанавливаем высоту псевдоэлемента на 100% высоты ссылки */
+}
+
+
+.navbar a:nth-child(3)::after {
+    display: none; /* Скрыть грань после последнего элемента навигации */
+}
+
+.navbar a:hover {
+    background-color: #494847;
+}
+
+
+
+
+
+
+.material-icons {
+    font-family: 'Material Symbols Outlined';
+    font-size: 50px;
+    vertical-align: middle;
+    color: white;
+}
+
+.pull-right {
+    float: right;
+    margin-top: 12px;
+    margin-right: 25px;
+}
+.dropbtn:hover {
+    background-color: #8b161b;
+    
+}
+
+/* Стилизация полосы прокрутки */
+/* Изменение высоты полосы скролла */
+::-webkit-scrollbar {
+    width: 12px;
+    min-height: 10px;
+}
+
+/* Стилизация "бегунка" (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: #191716; /* Цвет бегунка */
+}
+
+/* Стилизация трека (track) */
+::-webkit-scrollbar-track {
+    background-color: #E0E2DB; /* Цвет трека */
+    border-radius: 0px; /* Закругленные углы трека */
+}
+
+/* Стилизация угловых кнопок (переключателей) */
+::-webkit-scrollbar-corner {
+    background-color: #E0E2DB; /* Цвет угловых кнопок */
+}
+
+
+.material-symbols-outlined {
+    position: relative; /* Установите позицию элемента span как relative */
+    top: 5px; /* Смещение иконок на 5 пикселей вниз */
+}
+
+
+.dropbtnn {
+    font-family: 'Space Mono', monospace;
+    background-color: #191716;
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 30px;
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 75px;
+    margin-bottom: 75px;    
+    left: 50%;
+    transform: translateX(-50%);
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-contentt {
+    border-radius: 30px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    height: 210px;
+    box-shadow: 5px 8px 16px 17px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; /* Положение под кнопкой */
+    left: 50%; /* Центрируем по горизонтали относительно родительского элемента */
+    transform: translateX(-50%); /* Центрируем по горизонтали относительно самого элемента */
+    margin-top: 50px;
+    border: 1px solid #BEB7A4;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-contentt a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    height: 45px;
+    border-radius: 30px;
+    
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-contentt a:hover {background-color: #ddd}
+.container1 {
+    display: flex;
+    float: right;
+    margin-top: 20px;
+}
+
+.dropbtn1{
+    background-color:#191716 ;
+    border: none;
+    margin-right: 25px;
+    
+}
+
+.dropbtn1 span{
+    color: white;
+    font-size: 45px;
+}
+
+
+.dropdown1 button {
+    font-size: 17px;
+    font-family: 'Space Mono', monospace;
+    background-color: #191716;
+    border-radius: 30px;
+    height: 50px;
+    width: 200px;
+    color: white;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+.dropdown-content1 {
+    border: 1px solid #BEB7A4;
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    
+    z-index: 1;
+    border-radius: 30px;
+    margin-top: 10px;
+    right: 2%;
+
+}
+
+
+.dropdown-content1 a {
+    height: 75px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+}
+
+
+.dropdown-content1 a:hover {
+    background-color: #ddd;
+    border-radius: 30px;
+}
+
+
+.show {display:block;}
+
+.dropdown-content1 a span.material-symbols-outlined {
+    vertical-align: middle; /* Центрирование по вертикали */
+    display: inline-block; /* Сделать элемент инлайн-блочным для корректного выравнивания */
+    margin-right: 5px; /* Добавить немного отступа справа от иконки */ 
+    margin-top: -2px;
+    
+    
+}
+
+
+.dropdown-content1 a {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрирование по горизонтали */
+    padding: 5px;
+    text-decoration: none; /* Убедитесь, что у ссылок нет подчеркивания */
+    height: 50px;
+}
+
+footer {
+    
+    bottom: 0;
+    width: 100%;
+    background-color: #191716;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    
+    opacity: 0.80;
+    font-size: 18px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+
+.main {
+    width: 900px;
+    margin: 0px auto 50px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    background-color: #3D348B;
+    text-align: center;
+    min-height: 250px;
+
+}
+
+.img {
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.author {
+    font-size: 18px;
+    color: #ff9800; /* Измените цвет имени автора, например, на оранжевый */
+    margin-bottom: 10px; /* Уменьшите отступ снизу */
+}
+
+.title {
+    display: inline-block; /* Делаем блок inline, чтобы он имел ширину, достаточную для текста внутри */
+    font-size: 24px;
+    color: white;
+    background-color: #E0E2DB;
+    padding: 5px 10px;
+    border-radius: 50px;
+    width: auto;
+    min-width: 300px;
+    border: 1px solid #191716;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.content {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.comment-count {
+    font-size: 14px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 12px;
+    color: white;
+}
+
+.main a {
+    color: black; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчёркивание у ссылок */
+}
+
+
+.material-icons-outlined {
+    font-family: 'Material Icons Outlined';
+    font-size: 45px; /* Размер иконки */
+    color: #007bff; /* Цвет иконки */
+    /* Другие стили, если необходимо */
+}
+
+
+
+.delete{
+    margin-top: 15px;
+    color: #191716;
+}
+.button_delete{
+    font-family: 'Space Mono', monospace;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    width: 125px;
+    height: 35px;
+    cursor: pointer;
+}
+.button_delete:hover, .button_delete:focus{
+    background-color: #191716;
+}
+
+.polosa{
+    width: 95%;
+    height: 3px;
+    background-color: white;
+    border-radius: 30px;
+    right:  50%;
+    transform: translateX(2%);
+    margin-top: 75px;
+}

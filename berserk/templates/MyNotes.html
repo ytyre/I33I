@@ -1,0 +1,137 @@
+{% load thumbnail %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>I33I</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/my_notes.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/I33I/">I33I</a>
+        <a href="{% url 'ber' %}">Main</a>
+        <a href="{% url 'create_record' %}">Create record</a>
+        <a href="{% url 'account' %}">Account</a>
+
+        <div class="container1">
+            <button class="dropbtn1" onclick="toggleDropdown()">
+                <span class="material-icons-outlined">settings</span> 
+            </button>
+            
+        </div>     
+    </header>
+
+{% if request.user.is_authenticated %}
+<div id="myDropdown1" class="dropdown-content1">
+    <a href="{% url 'logout' %}">Logout</a>
+</div>
+{% else %}
+<div id="myDropdown1" class="dropdown-content1">
+    <a href="{% url 'sing_in' %}">Sign In</a>
+    <a href="{% url 'login' %}">Login</a>
+</div>
+{% endif %}
+
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtnn">Order by</button>
+            <div id="myDropdown" class="dropdown-contentt">
+                <a href="#"><span class="material-symbols-outlined">calendar_month
+                    </span>Date</a>
+                <a href="#"><span class="material-symbols-outlined">text_rotate_vertical
+                    </span>Title</a>
+                <a href="#"><span class="material-symbols-outlined">person
+                    </span>Author</a>
+            </div>
+        </div>
+    
+    
+    <script>
+function myFunction() {
+    var dropdownMenu = document.getElementById('myDropdown');
+    dropdownMenu.classList.toggle('show');
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtnn') && !event.target.matches('.material-icons-outlined')) {
+        var dropdowns = document.getElementsByClassName('dropdown-contentt');
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+};
+
+
+    </script>
+    <script>
+        
+    function toggleDropdown() {
+    var dropdownMenu = document.getElementById('myDropdown1');
+    dropdownMenu.classList.toggle('show');
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn1') && !event.target.matches('.material-icons-outlined')) {
+        var dropdowns = document.getElementsByClassName('dropdown-content1');
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+};
+
+
+
+
+    </script>
+
+    {% for i in item %}
+    <div class="main">
+
+
+        <div class="clearfix">
+            
+            <h2 class="title"><a href="{% url 'specific_entry' i.pk %}">{{ i.title }}</a></h2>
+            <div class="content">{{ i.content }}</div>
+            <i class="material-icons-outlined">comment</i>
+            <div class="comment-count">{{ i.comment_set.count|default:0 }}</div>
+            <div class="date">{{ i.published|date:"d.m.Y H:i" }}</div>
+            <div class="delete">
+                <form method="post" class="delete1" action="{% url 'BrDeleteRecord' i.pk %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="button_delete">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Contact us: <a href="mailto:feathui@mail.ru">feathui@mail.ru</a></p>
+                <p>Author: K.D.A.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

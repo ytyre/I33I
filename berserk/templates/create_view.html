@@ -1,0 +1,83 @@
+{% load thumbnail %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>I33I</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/create_record.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/I33I/">I33I</a>
+        <a href="{% url 'ber' %}">Main</a>
+        <a href="{% url 'create_record' %}">Create record</a>
+        <a href="{% url 'account' %}">Account</a>
+
+        <div class="container1">
+            <button class="dropbtn1" onclick="toggleDropdown()">
+                <span class="material-icons-outlined">settings</span> 
+            </button>
+            
+        </div>     
+    </header>
+
+{% if request.user.is_authenticated %}
+<div id="myDropdown1" class="dropdown-content1">
+    <a href="{% url 'logout' %}">Logout</a>
+</div>
+{% else %}
+<div id="myDropdown1" class="dropdown-content1">
+    <a href="{% url 'sing_in' %}">Sign In</a>
+    <a href="{% url 'login' %}">Login</a>
+</div>
+{% endif %}
+<div class="create_record">
+    <form method="post" class="create_record_form">
+        {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <input type="text" id="id_title" class="title" name="title" placeholder="Title" value="">
+        {{ form.title.errors }}
+        <input type="text" id="id_content" class="content" name="content" placeholder="Content" rows="4" cols="50"></input>
+        {{ form.content.errors }}
+        <input type="submit" value="add">
+    </form>
+</div>
+
+
+
+
+
+
+    <script>     
+        function toggleDropdown() {
+        var dropdownMenu = document.getElementById('myDropdown1');
+        dropdownMenu.classList.toggle('show');
+    }
+    
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn1') && !event.target.matches('.material-icons-outlined')) {
+            var dropdowns = document.getElementsByClassName('dropdown-content1');
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }; 
+    </script>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>Contact us: <a href="mailto:feathui@mail.ru">feathui@mail.ru</a></p>
+            <p>Author: K.D.A.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

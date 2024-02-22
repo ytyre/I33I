@@ -1,0 +1,140 @@
+{% load thumbnail %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>I33I</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/specific_entry.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <a href="/I33I/">I33I</a>
+        <a href="{% url 'create_record' %}">Create record</a>
+        <a href="{% url 'account' %}">Account</a>
+        <a href="{% url 'ber' %}">Main</a>
+        <div class="container1">
+            <button class="dropbtn1" onclick="toggleDropdown()">
+                <span class="material-icons-outlined">settings</span> 
+            </button>
+        </div>
+    </header>
+    {% if request.user.is_authenticated %}
+        <div id="myDropdown1" class="dropdown-content1">
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    {% else %}
+        <div id="myDropdown1" class="dropdown-content1">
+            <a href="{% url 'sing_in' %}">Sign In</a>
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+    {% endif %}
+    <div class="main"> 
+        <div>
+            {% if acc.image %}
+                <img src="{{ acc.image|thumbnail_url:'default' }}" class="img">
+            {% else %}
+                {% for i in admin_image %}
+                    <img src="{{ i.image|thumbnail_url:'base' }}" class="img">
+                {% endfor %}
+            {% endif %}
+            <a class="author" href="{% url 'UserInformations' user_id=post.author_id %}">{{ post.author }}</a>
+        </div>
+        <div class="con_tit">
+            <h2 class="title"><span class="material-symbols-outlined">public</span> {{ post.title }} <span class="material-symbols-outlined">public</span></h2>
+            <div class="content">
+                <h>{{ post.content }}</h>
+            </div>
+        </div>
+        <div class="all_rat">
+            <form method="post" action="{% url 'CreateLike' post_id=post.id %}" class="up_form">
+                {% csrf_token %}
+                <button type="submit" class="up"><span class="material-symbols-outlined">keyboard_arrow_up</span></button>
+            </form>
+            <h class="rating">{{rating|default:0}}</h>
+            <form method="post" action="{% url 'CreateDislike' post_id=post.id %}" class="down_form">
+                {% csrf_token %}
+                <button type="submit" class="down"><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+            </form>
+            <h class="date">{{ post.published|date:"d.m.Y H:i" }}</h>
+        </div>
+        
+        
+    </div>
+    
+    </div>
+
+    <div class="polosa"></div>
+    
+    
+    <script>
+        function toggleDropdown() {
+            var dropdownMenu = document.getElementById('myDropdown1');
+            dropdownMenu.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn1') && !event.target.matches('.material-icons-outlined')) {
+                var dropdowns = document.getElementsByClassName('dropdown-content1');
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        };
+    </script>
+    
+    {% if comments %}
+    <h2 class="com_h">Comments:</h2>
+    {% else %}
+    <h2 class="com_h">No comments!</h2>
+    {% endif %}
+    <div class="container">
+        <a class="create_comm" href="{% url 'comment' post.id %}">
+            <button class="com_but">Create a comment</button>
+        </a>
+    </div>
+    
+    {% for comment in comments %}
+        <div class="comment_info">
+            <div class="l_inf">
+            {% for author_info in comment.user.extrainformation_set.all %}
+                {% if author_info.image %}
+                    <img  class="com_img" src="{{ author_info.image|thumbnail_url:'default' }}" alt="{{ comment.user.username }}">
+                {% else %}
+                    {% for i in admin_image %}
+                        <img class="com_img" src="{{ i.image|thumbnail_url:'base' }}" alt="Фото по умолчанию">
+                    {% endfor %}
+                {% endif %}
+                <a class="author" href="{% url 'UserInformations' user_id=comment.user_id %}">{{ author_info.author.username }}</a>
+            {% endfor %}
+            </div>
+            <div class="content1">
+                <h>{{ comment.text }}</h>
+            </div>
+            <h class="date1">{{ comment.created_at }}</h>
+        </div>   
+        <div class="polosa1"></div>
+    {% endfor %}
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Contact us: <a href="mailto:feathui@mail.ru">feathui@mail.ru</a></p>
+                <p>Author: K.D.A.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+  

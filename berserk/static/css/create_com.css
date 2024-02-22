@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+body {
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E0E2DB;
+    min-height: 100%;
+}
+
+.navbar {
+    position: relative;
+    background-color: #191716;
+    overflow: hidden;
+    height: 90px;
+}
+
+.navbar a {
+    height: 90px;
+    margin-left: 0px;
+    width: 200px;
+    font-family: 'Space Mono', monospace;
+    float: left;
+    text-align: center;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 25px 20px; /* Вертикальный паддинг для выравнивания текста по центру */
+    text-decoration: none;
+    font-size: 25px;
+    transition: background-color 0.37s ease;
+    position: relative; /* Позиционируем для добавления разделительных граней */
+    margin-right: 0px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 0px; /* Расстояние между ссылками */
+    height: 100%; /* Устанавливаем высоту псевдоэлемента на 100% высоты ссылки */
+}
+
+
+.navbar a:nth-child(3)::after {
+    display: none; /* Скрыть грань после последнего элемента навигации */
+}
+
+.navbar a:hover {
+    background-color: #494847;
+}
+
+
+.search {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-right: 225px;
+    margin-top: 5px;
+    width: 450px;
+}
+
+.search form {
+    margin: 0;
+    border-radius: 25px;
+}
+
+.search input[type="text"] {
+    font-family: 'Space Mono', monospace;
+    font-size: 25px;
+    padding: 10px;
+    border: 1px #ff8227;
+    border-radius: 5px;
+    margin-right: 10px; /* Добавляем отступ между полем ввода и кнопкой */
+    
+}
+label[for="id_value"] {
+    display: none;
+}
+.search input[type="text"]:focus {
+    outline: none; /* Убираем обводку при фокусе */
+}
+
+.search button {
+    font-family: 'Space Mono', monospace;
+    font-size: 25px;
+    background-color: #191716;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.37s ease;
+    padding: 10px 20px;
+}
+
+.search button:hover {
+    background-color: #494847;
+}
+
+
+/* Стилизация полосы прокрутки */
+/* Изменение высоты полосы скролла */
+::-webkit-scrollbar {
+    width: 12px;
+    min-height: 10px;
+}
+
+/* Стилизация "бегунка" (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: #191716; /* Цвет бегунка */
+}
+
+/* Стилизация трека (track) */
+::-webkit-scrollbar-track {
+    background-color: #E0E2DB; /* Цвет трека */
+    border-radius: 0px; /* Закругленные углы трека */
+}
+
+/* Стилизация угловых кнопок (переключателей) */
+::-webkit-scrollbar-corner {
+    background-color: #E0E2DB; /* Цвет угловых кнопок */
+}
+
+
+.container1 {
+    display: flex;
+    float: right;
+    margin-top: 20px;
+}
+
+.dropbtn1{
+    background-color:#191716 ;
+    border: none;
+    margin-right: 25px;
+    
+}
+
+.dropbtn1 span{
+    color: white;
+    font-size: 45px;
+}
+
+
+.dropdown1 button {
+    font-size: 17px;
+    font-family: 'Space Mono', monospace;
+    background-color: #191716;
+    border-radius: 30px;
+    height: 50px;
+    width: 200px;
+    color: white;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+.dropdown-content1 {
+    border: 1px solid #BEB7A4;
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    
+    z-index: 1;
+    border-radius: 30px;
+    margin-top: 10px;
+    right: 2%;
+
+}
+
+
+.dropdown-content1 a {
+    height: 75px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+}
+
+
+.dropdown-content1 a:hover {
+    background-color: #ddd;
+    border-radius: 30px;
+}
+
+
+.show {display:block;}
+
+.dropdown-content1 a span.material-symbols-outlined {
+    vertical-align: middle; /* Центрирование по вертикали */
+    display: inline-block; /* Сделать элемент инлайн-блочным для корректного выравнивания */
+    margin-right: 5px; /* Добавить немного отступа справа от иконки */ 
+    margin-top: -2px;
+    
+    
+}
+
+
+.dropdown-content1 a {
+    font-family: 'Space Mono', monospace;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрирование по горизонтали */
+    padding: 5px;
+    text-decoration: none; /* Убедитесь, что у ссылок нет подчеркивания */
+    height: 50px;
+}
+
+.create_com_form {
+    /* Стили для формы create_com */
+    margin-bottom: 20px; /* Добавьте отступ снизу, чтобы избежать наложения на следующий элемент */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #191716;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    
+    opacity: 0.80;
+    font-size: 18px;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.paginator-link {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.paginator-link:hover {
+    text-decoration: underline;
+}
+
+.paginator-text {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+
+
+
+.create_com_form textarea#id_content {
+    resize: none;
+}
+
+.create_com {
+    max-width: 400px;
+    margin: 50px auto 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 10px 10px 25px  rgba(0, 0, 5, 0.35);
+    
+}
+
+.create_com_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create_com_form input[type="text"],
+.create_com_form input[type="text"] {
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 0 15px 0;
+}
+
+.create_com_form input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create_com_form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.create_com_form p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Увеличьте специфичность селектора */
+.create_com_form #id_text.content {
+    height: 125px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    border: 1px solid #191716;
+    font-size: 23px; /* Установите желаемый размер шрифта */
+}
+.content::placeholder {
+    font-size: 35px; /* Устанавливаем желаемый размер шрифта для placeholder */
+    text-align: center;
+}
+
+

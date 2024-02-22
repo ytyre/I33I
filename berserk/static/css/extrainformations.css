@@ -1,0 +1,174 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #191716, #3D348B, #E6AF2E, #494847);
+}
+
+.header {
+    position: relative;
+     /* Центрируем текст по горизонтали */
+    margin-top: 150px; /* Отступ сверху для .i */
+}
+
+.i {
+    font-family: 'Jost', sans-serif;
+    font-size: 120px;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* Добавляем тень для выделения текста */
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 15px 0 0 75px;
+	text-decoration: none;
+}
+
+
+
+
+
+.main{
+	width: 350px;
+	height: 500px;
+	background: red;
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+#chk{
+	display: none;
+}
+
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+input{
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #3D348B;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+button:hover{
+	background: #3D348B;
+}
+.login{
+    margin-top: 150px;
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	
+	transition: .8s ease-in-out;
+}
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+  }
+
+  /* Стилизация для элемента select */
+select {
+    
+    width: 230px;
+    height: 40px;
+    margin: auto 0 0 60px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #e0dede;
+    color: #000; /* Цвет текста */
+    font-size: 1em;
+}
+
+/* Стили для опций внутри элемента select */
+select option {
+    background: #fff;
+    color: #000;
+}
+
+/* При наведении курсора на опцию */
+select option:hover {
+    background: #3D348B;
+    color: #fff;
+}
+
+/* Стили для стрелки выпадающего списка */
+select::-ms-expand {
+    display: none;
+}
+
+/* Индивидуальные стили для Webkit браузеров (Chrome, Safari) */
+select::-webkit-select {
+    background: #e0dede;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+select::-webkit-select:hover {
+    background: #3D348B;
+    color: #fff;
+}
+
+select::-webkit-select-arrow {
+    background: #3D348B;
+}
+
+/* Индивидуальные стили для Firefox */
+select::-moz-select {
+    background: #e0dede;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+select::-moz-select:hover {
+    background: #3D348B;
+    color: #fff;
+}
+
+select::-moz-select-arrow {
+    background: #3D348B;
+}
